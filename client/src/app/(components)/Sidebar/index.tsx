@@ -2,7 +2,17 @@
 
 import { useAppDispatch, useAppSelector } from "@/app/redux";
 import { setIsSidebarCollapsed } from "@/state";
-import { Archive, CircleDollarSign, Clipboard, Layout, LucideIcon, Menu, SlidersHorizontal, User } from "lucide-react";
+import {
+  Archive,
+  CircleDollarSign,
+  Clipboard,
+  Layout,
+  LucideIcon,
+  Menu,
+  SlidersHorizontal,
+  User,
+} from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React, { use } from "react";
@@ -70,7 +80,13 @@ const Sidebar = () => {
         className={`flex gap-3 justify-between md:justify-normal items-center pt-8 
         ${isSidebarCollapesed ? "px-5" : "px-8"}`}
       >
-        <div>logo</div>
+        <Image
+          src="https://s3-inventorymanagement-bucket-0248.s3.eu-central-1.amazonaws.com/logo.png"
+          alt="smstock-logo"
+          width={27}
+          height={27}
+          className="rounded w-8"
+        />
         <h1
           className={`${
             isSidebarCollapesed ? "hidden" : "block"
